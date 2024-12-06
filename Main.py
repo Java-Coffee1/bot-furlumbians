@@ -12,22 +12,22 @@ with open("config.json") as config_file:
     config = json.load(config_file)
 
 TOKEN = config["TOKEN"]
-SERVER_ID = config["SERVER_ID"]
-C_QOTD = config["C_QOTD"]
-QOTD_ROLE_NAME = config["QOTD_ROLE_NAME"]
-ADMIN_USER_ID = config["ADMIN_USER_ID"]
-role_idV = config["ROLE_IDV"]
+SERVER_ID = 1031787884832890971
+C_QOTD = 1221538987123019786
+QOTD_ROLE_NAME = "Mods"
+ADMIN_USER_ID = 770668417367670866
+role_idV = 1220863107891597312
 #-------------COMMANDS-------------
 @bot.event
 async def on_ready():
     global role_mention
     global role_idV
-    role_mention = config["ROLE_MENTION"]
+    role_mention = role_idV
     if not role_mention:
         role_mention = None 
     print(role_idV)
     print(f"{bot.user} has connected to Discord!")
-    # Sync the commands with Discord
+    print(SERVER_ID, C_QOTD, QOTD_ROLE_NAME, ADMIN_USER_ID)
     guild = discord.Object(id=SERVER_ID)
     await bot.tree.sync(guild=guild)
     print("Commands synced successfully!")
