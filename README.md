@@ -2,3 +2,9 @@
 just a little bot that will run a daily question of the day
 
 run it using docker compose
+
+
+to build 
+
+docker build -t bot-furlumbians:lastest .
+

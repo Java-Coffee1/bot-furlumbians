@@ -21,4 +21,4 @@ ENV ROLE_MENTION=${ROLE_MENTION}
 ENV ROLE_IDV=${ROLE_IDV}
 
 # Run the bot script when the container starts
-CMD ["python", "bot.py"]
+CMD ["python", "Main.py"]
