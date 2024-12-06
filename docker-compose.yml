@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  discord-bot:
+    build: .
+    container_name: bot-furlumbians
+    environment:
+      - DISCORD_TOKEN=${TOKEN}
+      - SERVER_ID=${SERVER_ID}
+      - C_QOTD=${C_QOTD}
+      - QOTD_ROLE_NAME=${QOTD_ROLE_NAME}
+      - ADMIN_USER_ID=${ADMIN_USER_ID}
+      - ROLE_MENTION=""  # Empty string for null value
+      - ROLE_IDV=${ROLE_IDV}
+    volumes:
+      - /path/to/bot/files:/app  # Mounts your current directory to /app inside the container
+    restart: always  # Automatically restart the container if it stops
